@@ -7,6 +7,7 @@ import java.util.Map;
 
 import controllers.Security;
 
+import play.mvc.Http;
 import play.templates.FastTags;
 import play.templates.GroovyTemplate.ExecutableTemplate;
 import play.templates.TagContext;
@@ -26,5 +27,9 @@ public class SecurityTags extends FastTags {
 		if (Security.isConnected()) {
 			out.write(Security.connected());
 		}
+	}
+	
+	public static void _loginLink(Map<?, ?> args, Closure body, PrintWriter out, ExecutableTemplate template, int fromLine) {
+		out.print("<a href='/_ah/login?continue=" + Http.Request.current().path + "'>Login</a>");
 	}
 }

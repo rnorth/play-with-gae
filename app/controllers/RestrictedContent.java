@@ -9,7 +9,8 @@ import controllers.Security.Secure;
 
 import models.*;
 
-public class Application extends Controller {
+@With(Secure.class)
+public class RestrictedContent extends Controller {
 
     public static void index() {
         render();

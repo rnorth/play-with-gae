@@ -12,10 +12,12 @@
     </head>
     <body>
         #{ifLoggedIn}
-            #{userEmailAddress /}
+            #{userEmailAddress /} |
             <a href="/_ah/logout?continue=/">Logout</a>
-            
         #{/ifLoggedIn}
+        #{else}
+            #{loginLink /}
+        #{/else}
         
         #{doLayout /}
     </body>
