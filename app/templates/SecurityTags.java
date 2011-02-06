@@ -21,4 +21,10 @@ public class SecurityTags extends FastTags {
 			TagContext.parent().data.put("_executeNextElse", true);
 		}
 	}
+	
+	public static void _userEmailAddress(Map<?, ?> args, Closure body, PrintWriter out, ExecutableTemplate template, int fromLine) {
+		if (Security.isConnected()) {
+			out.write(Security.connected());
+		}
+	}
 }

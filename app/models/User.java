@@ -2,10 +2,12 @@ package models;
 
 import java.util.Date;
 
+import models.crudsiena.SienaSupport;
+
 import siena.Id;
 import siena.Model;
 
-public class User extends Model {
+public class User extends SienaSupport {
 
 	@Id
 	public Long id;

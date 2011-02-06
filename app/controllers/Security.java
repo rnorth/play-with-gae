@@ -29,6 +29,17 @@ public class Security {
 			}
 		}
 		
+		@Before(unless="logout")
+		static void registerNewUsers() {
+			if (GAE.isLoggedIn()) {
+				User existingUser = User.findByEmail(GAE.getUser().getEmail());
+				if (existingUser==null) {
+					User newUser = new User(GAE.getUser().getEmail());
+					newUser.insert();
+				}
+			}
+		}
+		
 		public static void logout() {
 			GAE.logout("/");
 		}
