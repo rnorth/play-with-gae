@@ -3,3 +3,4 @@
 .settings/
 eclipse/
 tmp/
+war/WEB-INF/appengine-generated/

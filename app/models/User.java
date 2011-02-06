@@ -13,9 +13,7 @@ public class User extends SienaSupport {
 	public Long id;
 	
 	public String email;
-	public String name;
 	public Date created = new Date();
-	public Date modified;
 	
 	public User(String email) {
 		this.email = email;
@@ -23,5 +21,9 @@ public class User extends SienaSupport {
 
 	public static User findByEmail(String email) {
 		return all(User.class).filter("email", email).get();
+	}
+	
+	public String toString() {
+		return email;
 	}
 }
