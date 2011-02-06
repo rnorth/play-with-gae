@@ -11,6 +11,10 @@
         #{get 'moreScripts' /}
     </head>
     <body>
+        #{ifLoggedIn}
+            <a href="/_ah/logout?continue=/">Logout</a>
+        #{/ifLoggedIn}
+        
         #{doLayout /}
     </body>
 </html>
