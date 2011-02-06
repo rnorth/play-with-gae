@@ -44,4 +44,19 @@ public class Security {
 			GAE.logout("/");
 		}
 	}
+	
+	public static class AdminOnly extends Controller {
+		
+		@Before
+		static void adminOnly() {
+			
+			if (!GAE.isLoggedIn()) {
+				GAE.login();
+			}
+			
+			if (!GAE.isAdmin()) {
+				forbidden();
+			}
+		}
+	}
 }
