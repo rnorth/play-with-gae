@@ -13,7 +13,7 @@
     <body>
         #{ifLoggedIn}
             #{userEmailAddress /} |
-            <a href="/_ah/logout?continue=/">Logout</a>
+            #{logoutLink /}
         #{/ifLoggedIn}
         #{else}
             #{loginLink /}

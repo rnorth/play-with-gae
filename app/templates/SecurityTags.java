@@ -30,6 +30,10 @@ public class SecurityTags extends FastTags {
 	}
 	
 	public static void _loginLink(Map<?, ?> args, Closure body, PrintWriter out, ExecutableTemplate template, int fromLine) {
-		out.print("<a href='/_ah/login?continue=" + Http.Request.current().path + "'>Login</a>");
+		out.print("<a href='/login'>Login</a>");
+	}
+	
+	public static void _logoutLink(Map<?, ?> args, Closure body, PrintWriter out, ExecutableTemplate template, int fromLine) {
+		out.print("<a href='/logout'>Logout</a>");
 	}
 }

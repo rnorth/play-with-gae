@@ -5,7 +5,7 @@ import play.modules.gae.GAE;
 import play.mvc.Before;
 import play.mvc.Controller;
 
-public class Security {
+public class Security extends Controller {
  
 	public static boolean isConnected() {
 		return connected() != null;
@@ -18,6 +18,14 @@ public class Security {
 		} else {
 			return null;
 		}
+	}
+	
+	public static void login() {
+		GAE.login("Application.index");
+	}
+	
+	public static void logout() {
+		GAE.logout("Application.index");
 	}
 
 	public static class Secure extends Controller {
